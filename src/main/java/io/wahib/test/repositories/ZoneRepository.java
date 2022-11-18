@@ -1,4 +1,10 @@
 package io.wahib.test.repositories;
 
-public interface ZoneRepository extends org.springframework.data.jpa.repository.JpaRepository<io.wahib.test.models.Zone, java.lang.Long> ,org.springframework.data.jpa.repository.JpaSpecificationExecutor<io.wahib.test.models.Zone> {
+import io.wahib.test.models.Zone;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ZoneRepository extends JpaRepository<Zone, Long>, JpaSpecificationExecutor<Zone> {
 }

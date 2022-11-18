@@ -1,2 +1,5 @@
-package io.wahib.test.models.enums;public enum TypePersonnel {
+package io.wahib.test.models.enums;
+
+public enum TypePersonnel {
+    GARDIEN, DIRECTEUR
 }

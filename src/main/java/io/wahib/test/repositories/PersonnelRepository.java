@@ -1,4 +1,10 @@
 package io.wahib.test.repositories;
 
-public interface PersonnelRepository extends org.springframework.data.jpa.repository.JpaRepository<io.wahib.test.models.Personnel, java.lang.Long> ,org.springframework.data.jpa.repository.JpaSpecificationExecutor<io.wahib.test.models.Personnel> {
+import io.wahib.test.models.Personnel;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface PersonnelRepository extends JpaRepository<Personnel, Long>, JpaSpecificationExecutor<Personnel> {
 }
