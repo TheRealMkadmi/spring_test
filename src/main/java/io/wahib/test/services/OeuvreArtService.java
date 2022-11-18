@@ -28,12 +28,8 @@ public class OeuvreArtService {
 
     public List<String> titreTableauParMuseeEtDirection(Long idMusee, Direction d) {
         var musee = museeRepository.findById(idMusee).get();
-        return musee.getZones()
-                .stream()
-                .filter(z -> z.getDirection() == d)
-                .map(Zone::getOeuvresArts)
-                .flatMap(List::stream)
-                .map(o -> o.getTitreTableau())
-                .toList();
+        var zones = musee.getZones().stream().filter(z -> z.getDirection() == d).toList();
+        var oeuvres = oeuvreArtRepository.findAllByZoneIn(zones);
+        return oeuvres.stream().map(OeuvreArt::getTitreTableau).toList();
     }
 }

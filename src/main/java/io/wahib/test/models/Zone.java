@@ -37,6 +37,6 @@ public class Zone {
     private List<OeuvreArt> oeuvresArts;
 
     @JsonIgnore
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Musee musee;
 }

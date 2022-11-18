@@ -46,8 +46,8 @@ public class PublicController {
         return personnelService.affecterPersonnelAUneZone(idPersonnel, idZone);
     }
 
-    @GetMapping("titreTableauParMuseeEtDirection")
-    public List<String> titreTableauParMuseeEtDirection(Long idMusee, Direction d){
+    @GetMapping("titreTableauParMuseeEtDirection/{idMusee}/{direction}")
+    public List<String> titreTableauParMuseeEtDirection(@PathVariable("idMusee") Long idMusee, @PathVariable("direction") Direction d){
         return oeuvreArtService.titreTableauParMuseeEtDirection(idMusee, d);
     }
 
